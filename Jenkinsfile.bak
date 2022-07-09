@@ -1,23 +1,12 @@
 pipeline {
-  agent any
-  tools {
-    nodejs 'node-11.0.0'
-  }
-
-  options {
-    timeout(time: 2, unit: 'MINUTES')
-  }
-
-  stages {
-    stage('Install dependencies') {
-      steps {
-        sh 'cd jenkins-tests && npm i'
-      }
+    agent {
+        docker { image 'node:14-alpine' }
     }
-    stage('Run tests') {
-      steps {
-        sh 'cd jenkins-tests && npm t'
-      }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-  }
 }
