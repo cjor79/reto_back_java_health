@@ -11,12 +11,12 @@ pipeline {
   stages {
     stage('Install dependencies') {
       steps {
-        sh 'npm i'
+        sh 'npm install'
       }
     }
     stage('Run tests') {
       steps {
-        sh 'npm t'
+        sh 'ng serve'
       }
     }
   }
