@@ -1,4 +1,4 @@
 FROM openjdk:12
 COPY ./java-health-0.0.1-SNAPSHOT.jar /opt/java-health-0.0.1-SNAPSHOT.jar
 VOLUME /tmp
-CMD java -jar "-Dspring.profiles.active=prod" /opt/java-health-0.0.1-SNAPSHOT
+CMD java -jar "-Dspring.profiles.active=prod" /opt/java-health-0.0.1-SNAPSHOT.jar

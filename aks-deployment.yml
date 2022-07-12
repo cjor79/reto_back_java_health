@@ -20,8 +20,6 @@ spec:
       labels:
         app: cmb-gatewayy
     spec:
-      nodeSelector:
-          plataform: <selector>
       containers:
         - name: cmb-gatewayy
           image: <image>
