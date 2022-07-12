@@ -33,7 +33,7 @@ spec:
               memory: 512Mi
           ports:
             - name: http
-              containerPort: 7900
+              containerPort: 8091
 ---
 apiVersion: v1
 kind: Service
@@ -47,6 +47,6 @@ spec:
     app: cmb-gatewayy
   ports:
     - protocol: TCP
-      port: 7900
-      targetPort: 7900
+      port: 8091
+      targetPort: 8091
 ---
