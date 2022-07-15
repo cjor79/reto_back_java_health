@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cmb-gatewayy-deployment
+  name: eks-back-deployment
   labels:
-    app: cmb-gatewayy
+    app: eks-back
     nviroment: Desarrollo
-    date_create: 24-04-2021
+    date_create: 14-07-2022
     team: PCS
-    name: cmb-cloud-gatewayy
+    name: eks-back
 spec:
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: cmb-gatewayy
+      app: eks-back
   template:
     metadata:
-      name: cmb-gatewayy-service
+      name: eks-back-service
       labels:
-        app: cmb-gatewayy
+        app: eks-back
     spec:
       nodeSelector:
           plataform: <selector>
       containers:
-        - name: cmb-gatewayy
+        - name: eks-back
           image: <image>
           imagePullPolicy: Always
           resources:
@@ -38,13 +38,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: cmb-gatewayy-np
+  name: eks-back-np
   labels:
-    app: cmb-gatewayy
+    app: eks-back
 spec:
   type: NodePort
   selector:
-    app: cmb-gatewayy
+    app: eks-back
   ports:
     - protocol: TCP
       port: 8091
